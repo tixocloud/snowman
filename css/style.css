@@ -1,0 +1,44 @@
+body {
+    background: url("/img/bg.png") top left no-repeat;
+    font-family: Helvetica, Arial, sans-serif;
+}
+
+#container {
+    width: 1000px;
+    margin: 0 auto;
+    background: #FFFFFF;
+}
+
+#gameboard {
+    width: 100%;
+    overflow: hidden;
+}
+
+.header {
+    float: left;
+    width: 200px;
+    text-align: center;
+}
+
+.question {
+    display: block;
+    height: 100px;
+    width: 200px;
+    font-size: 32px;
+    font-weight: bold;
+}
+
+.header h1 {
+    margin-bottom: 25px;
+    font-size: 28px;
+}
+
+.reveal-modal h1 {
+    margin-bottom: 60px;
+}
+
+.reveal-modal li {
+    margin: 10px 0;
+    font-size: 22px;
+    text-align: left;
+}

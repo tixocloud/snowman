@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<!-- saved from url=(0030)http://tixocloud.com/jeopardy/ -->
+<html><head><meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
+        <style type="text/css">
+            body {
+                background: url("background.png");
+            }
+
+            .header {
+                float: left;
+            }
+
+            .block {
+                display: block;
+                height: 200px;
+                width: 100px;
+            }
+
+            .question {
+
+            }
+        </style>
+    </head>
+    <body>
+        <div id="board"><div class="header">Category 0<div class="question">Question 0</div><div class="question">Question 1</div><div class="question">Question 2</div><div class="question">Question 3</div><div class="question">Question 4</div></div><div class="header">Category 1<div class="question">Question 0</div><div class="question">Question 1</div><div class="question">Question 2</div><div class="question">Question 3</div><div class="question">Question 4</div></div><div class="header">Category 2<div class="question">Question 0</div><div class="question">Question 1</div><div class="question">Question 2</div><div class="question">Question 3</div><div class="question">Question 4</div></div><div class="header">Category 3<div class="question">Question 0</div><div class="question">Question 1</div><div class="question">Question 2</div><div class="question">Question 3</div><div class="question">Question 4</div></div><div class="header">Category 4<div class="question">Question 0</div><div class="question">Question 1</div><div class="question">Question 2</div><div class="question">Question 3</div><div class="question">Question 4</div></div></div>
+        <script src="./bg_files/jquery-1.7.2.min.js"></script>
+        <script type="text/javascript">
+            function createHeader(headerTitle) {
+                var header = document.createElement('div');
+                header.className = "header";
+                header.innerHTML = headerTitle;
+                return header;
+            }
+
+            function createQuestion(point) {
+                var question = document.createElement('div');
+                question.className = "question";
+                question.innerHTML = point;
+                return question;
+            }
+            $(document).ready(function() {
+                for (var i = 0; i < 5; i++) {
+                    var header = createHeader('Category ' + i);
+                    for (var j = 0; j < 5; j++) {
+                        $(header).append(createQuestion('Question ' + j));
+                    }
+                    $('#board').append(header);
+                } 
+            }); 
+        </script>
+    
+
+</body><style type="text/css">embed[type*="application/x-shockwave-flash"],embed[src*=".swf"],object[type*="application/x-shockwave-flash"],object[codetype*="application/x-shockwave-flash"],object[src*=".swf"],object[codebase*="swflash.cab"],object[classid*="D27CDB6E-AE6D-11cf-96B8-444553540000"],object[classid*="d27cdb6e-ae6d-11cf-96b8-444553540000"],object[classid*="D27CDB6E-AE6D-11cf-96B8-444553540000"]{	display: none !important;}</style></html>

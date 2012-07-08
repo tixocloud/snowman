@@ -1,0 +1,16 @@
+{
+  "author": "Teren Teh <teren@tixocloud.com> (http://tixocloud.com)",
+  "name": "snowman",
+  "description": "A Jeopardy-like web based game",
+  "version": "0.0.1",
+  "repository": {
+    "type": "git",
+    "url": "git://github.com/tixocloud/snowman.git"
+  },
+  "dependencies": {},
+  "devDependencies": {},
+  "optionalDependencies": {},
+  "engines": {
+    "node": "*"
+  }
+}
