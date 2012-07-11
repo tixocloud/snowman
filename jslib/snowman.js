@@ -38,25 +38,19 @@
 
     // Questions in JSON format
     var questions = {
-        '1': {
-            'Food': {
-                '200': { q:'Where does pizza come from?', a: 'Italy', b: 'Spain', c: 'Thailand' },
-                '400': '',
-                '600': '',
-                '800': '',
-                '1000': ''
-            },
-            'Sports': {},
-            'Movies': {},
-            'Goshos': {},
-            'SGI': {}
-        },
+        '1': roundOne,
         '2': {
 
         }
     }
 
     var board = { width: 6, height: 5}
+    var items = localStorage.getItem("snowman");
+    var answeredQuestions = [];
+
+    if (items !== null) {
+        answeredQuestions = items.split(',');
+    }
 
     function createHeader(headerTitle) {
         var header = document.createElement('div');
@@ -65,7 +59,7 @@
         return header;
     }
 
-    function createQuestion(point, catQuestion) {
+    function createQuestion(category, point, catQuestion) {
         var question = document.createElement('button');
         question.className = "question block";
         question.innerHTML = point;
@@ -74,11 +68,20 @@
         question.setAttribute('data-b', catQuestion.b);
         question.setAttribute('data-c', catQuestion.c);
 
-        var modalId = catQuestion.q;
-        if (modalId !== undefined) {
-            modalId = catQuestion.q.replace(/ /g, '_').replace('?','');
-        }
+        var modalId = category + '-' + point;
+        question.id = modalId + '-button';
+
+        $.each(answeredQuestions, function( index, value ) {
+            console.log(answeredQuestions);
+            if (question.id === value) {
+                question.style.visibility = "hidden";
+            }
+        });
+
         question.setAttribute('data-reveal-id', modalId);
+        question.setAttribute('data-animation', 'fade');
+        question.setAttribute('data-onclose', question.id);
+
         var questionModal = document.createElement('div');
         questionModal.className = "reveal-modal";
         questionModal.id = modalId;
@@ -94,7 +97,7 @@
         $.each(questions['1'], function(category, catQuestions) {
             var header = createHeader(category);
             $.each(catQuestions, function(points, question) {
-                $(header).append(createQuestion(points, question));
+                $(header).append(createQuestion(category, points, question));
             });
             $('#gameboard').append(header);
         });

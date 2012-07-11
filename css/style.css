@@ -4,28 +4,30 @@ body {
 }
 
 #container {
-    width: 1000px;
+    width: 750px;
     margin: 0 auto;
-    background: #FFFFFF;
+    /*background: #FFFFFF;*/
 }
 
 #gameboard {
     width: 100%;
     overflow: hidden;
+    margin-top: 5px;
 }
 
 .header {
     float: left;
-    width: 200px;
+    width: 150px;
     text-align: center;
 }
 
 .question {
     display: block;
     height: 100px;
-    width: 200px;
+    width: 150px;
     font-size: 32px;
     font-weight: bold;
+    opacity: 0.8;
 }
 
 .header h1 {

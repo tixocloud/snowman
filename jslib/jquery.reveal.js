@@ -12,7 +12,7 @@
 /*---------------------------
  Defaults for Reveal
 ----------------------------*/
-	 
+
 /*---------------------------
  Listener for data-reveal-id attributes
 ----------------------------*/
@@ -28,20 +28,21 @@
 ----------------------------*/
 
     $.fn.reveal = function(options) {
-        
-        
-        var defaults = {  
+
+
+        var defaults = {
 	    	animation: 'fadeAndPop', //fade, fadeAndPop, none
 		    animationspeed: 300, //how fast animtions are
+            onclose: function() {},
 		    closeonbackgroundclick: true, //if you click background will modal close?
 		    dismissmodalclass: 'close-reveal-modal' //the class of a button or element that will close an open modal
-    	}; 
-    	
+    	};
+
         //Extend dem' options
-        var options = $.extend({}, defaults, options); 
-	
+        var options = $.extend({}, defaults, options);
+
         return this.each(function() {
-        
+
 /*---------------------------
  Global Variables
 ----------------------------*/
@@ -56,8 +57,8 @@
 ----------------------------*/
 			if(modalBG.length == 0) {
 				modalBG = $('<div class="reveal-modal-bg" />').insertAfter(modal);
-			}		    
-     
+			}
+
 /*---------------------------
  Open & Close Animations
 ----------------------------*/
@@ -73,14 +74,14 @@
 						modal.delay(options.animationspeed/2).animate({
 							"top": $(document).scrollTop()+topMeasure + 'px',
 							"opacity" : 1
-						}, options.animationspeed,unlockModal());					
+						}, options.animationspeed,unlockModal());
 					}
 					if(options.animation == "fade") {
 						modal.css({'opacity' : 0, 'visibility' : 'visible', 'top': $(document).scrollTop()+topMeasure});
 						modalBG.fadeIn(options.animationspeed/2);
 						modal.delay(options.animationspeed/2).animate({
 							"opacity" : 1
-						}, options.animationspeed,unlockModal());					
+						}, options.animationspeed,unlockModal());
 					} 
 					if(options.animation == "none") {
 						modal.css({'visibility' : 'visible', 'top':$(document).scrollTop()+topMeasure});
@@ -95,6 +96,21 @@
 			modal.bind('reveal:close', function () {
 			  if(!locked) {
 					lockModal();
+
+                    // Hide the question
+                    $('#'+options.onclose).css('visibility', 'hidden');
+
+                    // Cache the answered questions
+                    var items = localStorage.getItem("snowman");
+                    var questions = [];
+                    if (items !== null) {
+                        questions = items.split(',');
+                    }
+                    console.log("Retrieving questions");
+                    console.log(questions);
+                    questions.push(options.onclose);
+                    localStorage.setItem("snowman", questions);
+
 					if(options.animation == "fadeAndPop") {
 						modalBG.delay(options.animationspeed).fadeOut(options.animationspeed);
 						modal.animate({

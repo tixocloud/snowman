@@ -16,6 +16,9 @@ app.get('/img/modal-glass.png', function( req, res ) {
     res.sendfile(__dirname + '/img/modal-glass.png');
 });
 
+app.get('/jslib/round1.js', function( req, res ) {
+    res.sendfile(__dirname + '/jslib/round1.js');
+});
 app.get('/jslib/snowman.js', function( req, res ) {
     res.sendfile(__dirname + '/jslib/snowman.js');
 });
