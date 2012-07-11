@@ -27,7 +27,6 @@
     // - show answers
     // - show question
     socket.on('news', function (data) {
-        console.log(data);
         socket.emit('other', { my: 'data' });
 
         // Game runner selects a question
@@ -39,17 +38,43 @@
     // Questions in JSON format
     var questions = {
         '1': roundOne,
-        '2': {
-
-        }
+        '2': roundTwo
     }
 
+    var round = localStorage.getItem("snowman-round") || "snowman1";
     var board = { width: 6, height: 5}
-    var items = localStorage.getItem("snowman");
+    var items = localStorage.getItem(round);
     var answeredQuestions = [];
 
     if (items !== null) {
         answeredQuestions = items.split(',');
+    }
+
+    function draw() {
+        var newRound = localStorage.getItem("snowman-round") || "snowman1";
+        var gameQuestions = {};
+        if (round === "snowman1") {
+            gameQuestions = questions['1'];
+        } else {
+            gameQuestions = questions['2'];
+        }
+
+        items = localStorage.getItem(newRound);
+        answeredQuestions = [];
+
+        if (items !== null) {
+            answeredQuestions = items.split(',');
+        }
+
+        $('#gameboard').html('');
+
+        $.each(gameQuestions, function(category, catQuestions) {
+            var header = createHeader(category);
+            $.each(catQuestions, function(points, question) {
+                $(header).append(createQuestion(category, points, question, newRound));
+            });
+            $('#gameboard').append(header);
+        });
     }
 
     function createHeader(headerTitle) {
@@ -59,7 +84,7 @@
         return header;
     }
 
-    function createQuestion(category, point, catQuestion) {
+    function createQuestion(category, point, catQuestion, round) {
         var question = document.createElement('button');
         question.className = "question block";
         question.innerHTML = point;
@@ -72,7 +97,6 @@
         question.id = modalId + '-button';
 
         $.each(answeredQuestions, function( index, value ) {
-            console.log(answeredQuestions);
             if (question.id === value) {
                 question.style.visibility = "hidden";
             }
@@ -81,25 +105,39 @@
         question.setAttribute('data-reveal-id', modalId);
         question.setAttribute('data-animation', 'fade');
         question.setAttribute('data-onclose', question.id);
+        question.setAttribute('data-round', round);
 
         var questionModal = document.createElement('div');
         questionModal.className = "reveal-modal";
         questionModal.id = modalId;
-        questionModal.innerHTML = '<h1>' + catQuestion.q + '</h1><ol type="a">'
-                                 + '<li>' + catQuestion.a + '</li>'
-                                 + '<li>' + catQuestion.b + '</li>'
-                                 + '<li>' + catQuestion.c + '</li>'
+        questionModal.innerHTML = '<h1>' + catQuestion.q.en + '</h1>'
+                                 + '<h1>' + catQuestion.q.fr + '</h1>'
+                                 + '<ol type="a">'
+                                 + '<li>' + catQuestion.a.en + '<br/>' + catQuestion.a.fr + '</li>'
+                                 + '<li>' + catQuestion.b.en + '<br/>' + catQuestion.b.fr + '</li>'
+                                 + '<li>' + catQuestion.c.en + '<br/>' + catQuestion.c.fr + '</li>'
                                  + '</ol>';
         return [question, questionModal];
     }
 
     $(document).ready(function() {
-        $.each(questions['1'], function(category, catQuestions) {
-            var header = createHeader(category);
-            $.each(catQuestions, function(points, question) {
-                $(header).append(createQuestion(category, points, question));
-            });
-            $('#gameboard').append(header);
+        draw();
+
+        $('#round1').click(function() {
+            localStorage.setItem("snowman-round", "snowman1");
+            round = "snowman1";
+            draw();
+        });
+
+        $('#round2').click(function() {
+            localStorage.setItem("snowman-round", "snowman2");
+            round = "snowman2";
+            draw();
+        });
+
+        $('#reset').click(function() {
+            localStorage.removeItem(round);
+            draw();
         });
     });
 })(jQuery);

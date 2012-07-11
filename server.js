@@ -12,12 +12,15 @@ app.get('/img/bg.png', function( req, res ) {
     res.sendfile(__dirname + '/img/bg.png');
 });
 
-app.get('/img/modal-glass.png', function( req, res ) {
-    res.sendfile(__dirname + '/img/modal-glass.png');
+app.get('/img/modal-gloss.png', function( req, res ) {
+    res.sendfile(__dirname + '/img/modal-gloss.png');
 });
 
 app.get('/jslib/round1.js', function( req, res ) {
     res.sendfile(__dirname + '/jslib/round1.js');
+});
+app.get('/jslib/round2.js', function( req, res ) {
+    res.sendfile(__dirname + '/jslib/round2.js');
 });
 app.get('/jslib/snowman.js', function( req, res ) {
     res.sendfile(__dirname + '/jslib/snowman.js');

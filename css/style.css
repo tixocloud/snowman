@@ -9,10 +9,13 @@ body {
     /*background: #FFFFFF;*/
 }
 
+
+
 #gameboard {
     width: 100%;
     overflow: hidden;
     margin-top: 5px;
+    margin-bottom: 200px;
 }
 
 .header {

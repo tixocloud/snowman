@@ -101,15 +101,13 @@
                     $('#'+options.onclose).css('visibility', 'hidden');
 
                     // Cache the answered questions
-                    var items = localStorage.getItem("snowman");
+                    var items = localStorage.getItem(options.round);
                     var questions = [];
                     if (items !== null) {
                         questions = items.split(',');
                     }
-                    console.log("Retrieving questions");
-                    console.log(questions);
                     questions.push(options.onclose);
-                    localStorage.setItem("snowman", questions);
+                    localStorage.setItem(options.round, questions);
 
 					if(options.animation == "fadeAndPop") {
 						modalBG.delay(options.animationspeed).fadeOut(options.animationspeed);
