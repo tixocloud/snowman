@@ -109,6 +109,8 @@
                     questions.push(options.onclose);
                     localStorage.setItem(options.round, questions);
 
+                    // Fire close to server
+
 					if(options.animation == "fadeAndPop") {
 						modalBG.delay(options.animationspeed).fadeOut(options.animationspeed);
 						modal.animate({

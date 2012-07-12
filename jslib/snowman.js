@@ -1,25 +1,5 @@
 (function($) {
-
-    // Question object
-    // - question text
-    // - answer
-    Question = Backbone.Model.extend({
-        question: '',
-        answer:'',
-        points: 0
-    });
-
-    // There should be a collection of questions
-    Questions = Backbone.Collection.extend({
-
-    });
-
-
-    Game = Backbone.View.extend({
-        el: $('body')
-    });
-
-    var socket = io.connect('http://localhost');
+    var socket = io.connect('http://localhost:8080');
 
     // Gameboard events
     // - close question
@@ -110,9 +90,17 @@
         var questionModal = document.createElement('div');
         questionModal.className = "reveal-modal";
         questionModal.id = modalId;
+        $(questionModal).bind('reveal:close', function() {
+            // Fire events
+            socket.emit('close', {'q': this.id});
+        });
+        $(questionModal).bind('reveal:open', function() {
+            // Fire events
+            socket.emit('open', {'q': this.id});
+        });
         questionModal.innerHTML = '<h1>' + catQuestion.q.en + '</h1>'
                                  + '<h1>' + catQuestion.q.fr + '</h1>'
-                                 + '<ol type="a">'
+                                 + '<ol type="a" id="' + modalId + '-list">'
                                  + '<li>' + catQuestion.a.en + '<br/>' + catQuestion.a.fr + '</li>'
                                  + '<li>' + catQuestion.b.en + '<br/>' + catQuestion.b.fr + '</li>'
                                  + '<li>' + catQuestion.c.en + '<br/>' + catQuestion.c.fr + '</li>'
@@ -120,24 +108,50 @@
         return [question, questionModal];
     }
 
+    function resetGame() {
+        localStorage.removeItem(round);
+        draw();
+    }
+
+    function changeRound(newRound) {
+        localStorage.setItem("snowman-round", newRound);
+        round = newRound;
+        draw();
+    }
+
+    socket.on('reset', function() {
+        resetGame();
+    });
+
+    socket.on('close', function(data) {
+        $('#' + data['q']).trigger('reveal:close');
+    });
+
+    socket.on('open', function(data) {
+        console.log('Opening question: ' + data['q']);
+        $('#' + data['q'] + '-button').click();
+    });
+
+    socket.on('changeRound', function(data) {
+        changeRound(data['round']);
+    });
+
     $(document).ready(function() {
         draw();
 
         $('#round1').click(function() {
-            localStorage.setItem("snowman-round", "snowman1");
-            round = "snowman1";
-            draw();
+            changeRound("snowman1");
+            socket.emit('changeRound', {'round': "snowman1"});
         });
 
         $('#round2').click(function() {
-            localStorage.setItem("snowman-round", "snowman2");
-            round = "snowman2";
-            draw();
+            changeRound("snowman2");
+            socket.emit('changeRound', {'round': "snowman2"});
         });
 
         $('#reset').click(function() {
-            localStorage.removeItem(round);
-            draw();
+            resetGame();
+            socket.emit('reset');
         });
     });
 })(jQuery);

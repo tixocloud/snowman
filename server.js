@@ -16,6 +16,9 @@ app.get('/img/modal-gloss.png', function( req, res ) {
     res.sendfile(__dirname + '/img/modal-gloss.png');
 });
 
+app.get('/jslib/colors.js', function( req, res ) {
+    res.sendfile(__dirname + '/jslib/colors.js');
+});
 app.get('/jslib/round1.js', function( req, res ) {
     res.sendfile(__dirname + '/jslib/round1.js');
 });
@@ -63,4 +66,22 @@ io.sockets.on('connection', function( socket ) {
         console.log(data);
     });
 
+    socket.on('reset', function() {
+        socket.broadcast.emit('reset');
+    });
+
+    socket.on('close', function(data) {
+        console.log(data);
+        socket.broadcast.emit('close', {'q': data['q']});
+    });
+
+    socket.on('open', function(data) {
+        console.log('Open question: ' + data['q']);
+        socket.broadcast.emit('open', {'q': data['q']});
+    });
+
+    socket.on('changeRound', function(data) {
+        console.log('Changing round to ' + data['round']);
+        socket.broadcast.emit('changeRound', {'round': data['round']});
+    });
 });
