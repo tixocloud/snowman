@@ -9,7 +9,11 @@ body {
     /*background: #FFFFFF;*/
 }
 
-
+.group {
+    display: block;
+    width: 200px;
+    height: 30px;
+}
 
 #gameboard {
     width: 100%;

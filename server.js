@@ -57,9 +57,6 @@ app.get('/css/reveal.css', function( req, res ) {
 
 io.sockets.on('connection', function( socket ) {
     socket.emit('news', { hello: 'world' });
-    socket.on('other', function( data ) {
-        console.log(data);
-    });
 
     // Events for ipad
     socket.on('questionChosen', function( question ) {

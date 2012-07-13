@@ -98,13 +98,16 @@
             // Fire events
             socket.emit('open', {'q': this.id});
         });
-        questionModal.innerHTML = '<h1>' + catQuestion.q.en + '</h1>'
+        questionModal.innerHTML = '<div class="group" style="background-color: '  + catQuestion.color + '"></div>'
+                                 + '<h1>' + catQuestion.q.en + '</h1>'
                                  + '<h1>' + catQuestion.q.fr + '</h1>'
                                  + '<ol type="a" id="' + modalId + '-list">'
                                  + '<li>' + catQuestion.a.en + '<br/>' + catQuestion.a.fr + '</li>'
                                  + '<li>' + catQuestion.b.en + '<br/>' + catQuestion.b.fr + '</li>'
                                  + '<li>' + catQuestion.c.en + '<br/>' + catQuestion.c.fr + '</li>'
-                                 + '</ol>';
+                                 + '</ol>'
+                                 + '<button>Show answer</button>';
+        var button = document.createElement('button');
         return [question, questionModal];
     }
 
