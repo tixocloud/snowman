@@ -63,7 +63,7 @@
  Open & Close Animations
 ----------------------------*/
 			//Entrance Animations
-			modal.bind('reveal:open', function () {
+			modal.bind('modalOpen', function () {
 			  modalBG.unbind('click.modalEvent');
 				$('.' + options.dismissmodalclass).unbind('click.modalEvent');
 				if(!locked) {
@@ -89,11 +89,11 @@
 						unlockModal()				
 					}
 				}
-				modal.unbind('reveal:open');
+				modal.unbind('modalOpen');
 			}); 	
 
 			//Closing Animation
-			modal.bind('reveal:close', function () {
+			modal.bind('modalClose', function () {
 			  if(!locked) {
 					lockModal();
 
@@ -135,28 +135,28 @@
 						modalBG.css({'display' : 'none'});	
 					}		
 				}
-				modal.unbind('reveal:close');
+				modal.unbind('modalClose');
 			});     
    	
 /*---------------------------
  Open and add Closing Listeners
 ----------------------------*/
         	//Open Modal Immediately
-    	modal.trigger('reveal:open')
+    	modal.trigger('modalOpen')
 			
 			//Close Modal Listeners
 			var closeButton = $('.' + options.dismissmodalclass).bind('click.modalEvent', function () {
-			  modal.trigger('reveal:close')
+			  modal.trigger('modalClose')
 			});
 			
 			if(options.closeonbackgroundclick) {
 				modalBG.css({"cursor":"pointer"})
 				modalBG.bind('click.modalEvent', function () {
-				  modal.trigger('reveal:close')
+				  modal.trigger('modalClose')
 				});
 			}
 			$('body').keyup(function(e) {
-        		if(e.which===27){ modal.trigger('reveal:close'); } // 27 is the keycode for the Escape key
+        		if(e.which===27){ modal.trigger('modalClose'); } // 27 is the keycode for the Escape key
 			});
 			
 			
