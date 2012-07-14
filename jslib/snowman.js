@@ -1,5 +1,5 @@
 (function($) {
-    var socket = io.connect('http://localhost:8080');
+    var socket = io.connect('http://terens-macbook-pro.local:8080');
 
     // Gameboard events
     // - close question
@@ -90,11 +90,11 @@
         var questionModal = document.createElement('div');
         questionModal.className = "reveal-modal";
         questionModal.id = modalId;
-        $(questionModal).bind('reveal:close', function() {
+        $(questionModal).bind('modalClose', function() {
             // Fire events
             socket.emit('close', {'q': this.id});
         });
-        $(questionModal).bind('reveal:open', function() {
+        $(questionModal).bind('modalOpen', function() {
             // Fire events
             socket.emit('open', {'q': this.id});
         });
@@ -127,7 +127,7 @@
     });
 
     socket.on('close', function(data) {
-        $('#' + data['q']).trigger('reveal:close');
+        $('#' + data['q']).trigger('modalClose');
     });
 
     socket.on('open', function(data) {

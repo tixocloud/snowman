@@ -1,462 +1,442 @@
 var roundTwo = {
-    'SGI': {
+    'Science': {
         '100': {
-            'q': {'en': 'The number of countries and territories around the world with members '
-                    + 'practiciing Nichiren Buddhism.',
-                'fr': 'Le nombre de pays et territoires autour du monde où les membres pratiquent le '
-                    + 'bouddhisme de Nichiren Daishonin.'},
-            'a': {'en': '202', 'fr': '202'},
-            'b': {'en': '192', 'fr': '192'},
-            'c': {'en': '112', 'fr': '112'},
-            'color': COLOR.BLUE,
+            'q': {'en': 'Which part of the body has a collection of 22 bones?',
+                'fr': 'Quelle partie du corps a un ensemble de 22 os?'},
+            'a': {'en': 'Arm', 'fr': 'Le bras'},
+            'b': {'en': 'Skull', 'fr': 'Le crâne'},
+            'c': {'en': 'Torso', 'fr': 'Le torse'},
+            'color': COLOR.ADULT,
             'answer': 'b'
         },
         '200': {
-            'q': {'en':  'The Caledon Centre for Culture and Education was a gift from _______'
-                    + ' to Canadian members.',
-                'fr': 'Le Centre pour la culture et l’éducation de Caledon était un cadeau de _______ aux '
-                    + ' membres canadiens.'},
-            'a': {'en': 'President Ikeda', 'fr': 'Président Ikeda'},
-            'b': {'en': 'Canadian government', 'fr': 'Gouvernement canadien'},
-            'c': {'en': 'Japanese government', 'fr': 'Gouvernement japonais'},
+            'q': {'en': 'Which organ pumps blood?',
+                'fr': 'Quel organe pompe le sang?'},
+            'a': {'en': 'Liver', 'fr': 'Le foie'},
+            'b': {'en': 'Heart', 'fr': 'Le coeur'},
+            'c': {'en': 'Intestine', 'fr': 'Les instestins'},
             'color': COLOR.RED,
-            'answer': 'a'
+            'answer': 'b'
         },
         '300': {
-            'q': {'en': 'The year Soka University in Japan was opened.', 'fr': 'L’année de l’ouverture de l’université Soka au Japon?'},
-            'a': {'en': '1993', 'fr': '1993'},
-            'b': {'en': '1928', 'fr': '1928'},
-            'c': {'en': '1971', 'fr': '1971'},
-            'color': COLOR.GREEN,
-            'answer': 'c'
+            'q': {'en': 'What is the largest planet in the solar system?', 'fr': 'Quelle est la plus grande planète du système solaire?'},
+            'a': {'en': 'Jupiter', 'fr': 'Jupiter'},
+            'b': {'en': 'Earth', 'fr': 'Terre'},
+            'c': {'en': 'Neptune', 'fr': 'Neptune'},
+            'color': COLOR.BLUE,
+            'answer': 'a'
         },
         '400': {
-            'q': {'en': 'The first issue of New Century was published.', 'fr': 'Le premier numéro du New Century a été publié en ______.'},
-            'a': {'en': 'October 1960', 'fr': 'Octobre 1960'},
-            'b': {'en': 'October 1971', 'fr': 'Octobre 1971'},
-            'c': {'en': 'October 1981', 'fr': 'Octobre 1981'},
-            'color': COLOR.ADULT,
-            'answer': 'c'
+            'q': {'en': 'What is the heaviest animal in the world?', 'fr': 'Quel est l’animal le plus lourd au monde?'},
+            'a': {'en': 'Blue whale', 'fr': 'La baleine bleue'},
+            'b': {'en': 'African Elephant', 'fr': 'L’éléphant africain'},
+            'c': {'en': 'Hippopotamus', 'fr': 'L’hippopotame'},
+            'color': COLOR.YELLOW,
+            'answer': 'a'
         },
         '500': {
             'q': {
-                'en': 'The age that President Daisaku Ikeda started practicing Nichiren\'s '
-                        + 'Buddhism.',
-                'fr': 'L’âge auquel Daisaku Ikeda a commencé à pratiquer le bouddhisme '
-                        + 'de Nichiren?'
+                'en': 'Sound travels in?',
+                'fr': 'Le son voyage en ...'
             },
-            'a': {'en': '19', 'fr': '19 ans'},
-            'b': {'en': '20', 'fr': '20 ans'},
-            'c': {'en': '30', 'fr': '30 ans'},
-            'color': COLOR.YELLOW,
-            'answer': 'a'
+            'a': {'en': 'Straight lines', 'fr': 'Lignes droites'},
+            'b': {'en': 'Waves', 'fr': 'Vagues'},
+            'c': {'en': 'Zigzags', 'fr': 'Zigzags'},
+            'color': COLOR.GREEN,
+            'answer': 'b'
         },
     },
-    'Math': {
+    'Geography': {
         '100': {
             'q': {
-                'en': 'What is 3 + 5 ?',
-                'fr': 'Quel est le total de 3 + 5 ?'
+                'en': 'In the desert, which of these is very rare?',
+                'fr': 'Dans le désert, qu’est-ce qui est le plus rare?'
             },
             'a': {
-                'en': '2',
-                'fr': '2'
+                'en': 'Sand',
+                'fr': 'Le sable'
             },
             'b': {
-                'en': '8',
-                'fr': '8'
+                'en': 'Rain',
+                'fr': 'La pluie'
             },
             'c': {
-                'en': '7',
-                'fr': '7'
+                'en': 'Sun',
+                'fr': 'Le soleil'
             },
             'color': COLOR.RED,
             'answer': 'b'
         },
         '200': {
             'q': {
-                'en': 'What is 64 x 3 ?',
-                'fr': 'Que fait 64 x 3 ?'
+                'en': 'What is the capital city of Canada?',
+                'fr': 'Quelle est la capitale du Canada?'
             },
             'a': {
-                'en': '192',
-                'fr': '192'
+                'en': 'Toronto',
+                'fr': 'Toronto'
             },
             'b': {
-                'en': '72',
-                'fr': '72'
+                'en': 'Ottawa',
+                'fr': 'Ottawa'
             },
             'c': {
-                'en': '182',
-                'fr': '182'
+                'en': 'Montreal',
+                'fr': 'Montréal'
             },
             'color': COLOR.BLUE,
-            'answer': 'a'
+            'answer': 'b'
         },
         '300': {
             'q': {
-                'en': 'How many centimeters are there in 10 meters?',
-                'fr': 'Combien de centimètres y a-t-il dans 10 mètres?'
+                'en': 'Which layer of the earth do humans actually live on?',
+                'fr': 'Sur quelle couche terrestre est-ce que les humains vivent véritablement?'
             },
             'a': {
-                'en': '0.1',
-                'fr': '0.1'
+                'en': 'Core',
+                'fr': 'Le centre'
             },
             'b': {
-                'en': '10',
-                'fr': '10'
+                'en': 'Crust',
+                'fr': 'La croûte'
             },
             'c': {
-                'en': '100',
-                'fr': '100'
+                'en': 'Mantle',
+                'fr': 'Le manteau'
             },
             'color': COLOR.YELLOW,
-            'answer': 'c'
+            'answer': 'b'
         },
         '400': {
             'q': {
-                'en': 'Calculate: 7 – 2 (8 – 6) = ?',
-                'fr': 'Calcule: 7 – 2 (8 – 6) = ?'
+                'en': 'What is the highest mountain in the world?',
+                'fr': 'Quelle est la plus haute montagne au monde?'
             },
             'a': {
-                'en': '10',
-                'fr': '10'
+                'en': 'Mount Fuji',
+                'fr': 'Mont Fuji'
             },
             'b': {
-                'en': '3',
-                'fr': '3'
+                'en': 'Mount Kilimanjaro',
+                'fr': 'Mont Kilimanjaro'
             },
             'c': {
-                'en': '-15',
-                'fr': '-15'
+                'en': 'Mount Everest',
+                'fr': 'Mont Everest'
             },
             'color': COLOR.GREEN,
-            'answer': 'b'
+            'answer': 'c'
         },
         '500': {
             'q': {
-                'en': 'Tania needed to borrow some money from David. She agreed to pay him back one and a half times the original sum, plus $60. She paid David a total of $228. What was the original amount she borrowed?',
-                'fr': 'Tania avait besoin d’emprunter de l’argent à David. Elle était d’accord pour lui remettre l’argent, une fois et demie la somme originale, plus 60$. Elle a donné à David un total de 228$. Quelle était le montant original qu’elle avait emprunté.'
+                'en': 'Name the world’s largest archipelago. Hint: This archipelago forms a natural barrier between the Indian and Pacific oceans.',
+                'fr': 'Nommez le plus grand archipel au monde. Indice: Cet archipel forme une barrière naturelle entre l’océan Indien et l’océan Pacifique.',
             },
             'a': {
-                'en': '$122',
-                'fr': '$122'
+                'en': 'French Polynesia',
+                'fr': 'Polynésie française'
             },
             'b': {
-                'en': '$121',
-                'fr': '$121'
+                'en': 'Franz Joseph Land, off northern Russia',
+                'fr': 'Terre Franz Joseph, au nord de la Russie'
             },
             'c': {
-                'en': '$112',
-                'fr': '$112'
+                'en': 'Indonesia',
+                'fr': 'Indonésie'
             },
             'color': COLOR.ADULT,
             'answer': 'c'
         },
     },
-    'Food': {
+    'Movies': {
         '100': {
             'q': {
-                'en': 'This is a kind of vegetable.',
-                'fr': 'C’est une sorte de légume.'
+                'en': 'Number of children in the movie “Cheaper by the Dozen”',
+                'fr': 'Le nombre d’enfants dans le film « Moins cher à la douzaine » (Cheaper by the dozen)'
             },
             'a': {
-                'en': 'Kale',
-                'fr': 'Le chou frisé (kale)'
+                'en': 'Eight',
+                'fr': 'Huit'
             },
             'b': {
-                'en': 'Kiwi',
-                'fr': 'Le kiwi'
+                'en': 'Ten',
+                'fr': 'Dix'
             },
             'c': {
-                'en': 'Kumquat',
-                'fr': 'Le kumquat'
+                'en': 'Twelve',
+                'fr': 'Douze'
             },
             'color': COLOR.YELLOW,
-            'answer': 'a'
+            'answer': 'c'
         },
         '200': {
             'q': {
-                'en': 'This is the restaurant\'s slogan: "Canada\'s Best Tasting Burger"',
-                'fr': 'C’est le slogan d’un restaurant : « Le hamburger le plus savoureux au Canada ».'
+                'en': 'The main characters in the movie "The Hunger Games".',
+                'fr': 'Les personnages principaux dans le film « Les jeux de la faim » (The Hunger Games)'
             },
             'a': {
-                'en': 'McDonald\'s',
-                'fr': 'McDonald\'s'
+                'en': 'Katniss and Peeta',
+                'fr': 'Katniss et Peeta'
             },
             'b': {
-                'en': 'Harvey\'s',
-                'fr': 'Harvey\'s'
+                'en': 'Katie and Gale',
+                'fr': 'Katie et Gale'
             },
             'c': {
-                'en': 'Burger King',
-                'fr': 'Burger King'
+                'en': 'Prim and Marvel',
+                'fr': 'Prim et Marvel'
             },
-            'color': COLOR.ADULT,
-            'answer': 'b'
+            'color': COLOR.GREEN,
+            'answer': 'a'
         },
         '300': {
             'q': {
-                'en': 'The country that sushi was first created.',
-                'fr': 'Le pays où le sushi a été créé dès le début.'
+                'en': 'The restaurant\'s name in the beginning of the movie "Ratatouille".',
+                'fr': 'Le nom du restaurant qui apparaît au début du film « Ratatouille ».'
             },
             'a': {
-                'en': 'China',
-                'fr': 'La Chine'
+                'en': 'Linguini\'s',
+                'fr': 'Chez Linguini',
             },
             'b': {
-                'en': 'Canada',
-                'fr': 'Le Canada'
+                'en': 'Remy\'s',
+                'fr': 'Chez Rémy',
             },
             'c': {
-                'en': 'Japan',
-                'fr': 'Le Japon'
+                'en': 'Gusteau\'s',
+                'fr': 'Chez Gusteau'
             },
-            'color': COLOR.BLUE,
+            'color': COLOR.ADULT,
             'answer': 'c'
         },
         '400': {
             'q': {
-                'en': 'This fruit provides more vitamin C than an orange.',
-                'fr': 'Le fruit qui fournit plus de vitamine C que l’orange.'
+                'en': 'The characters are blue and white in this movie.',
+                'fr': 'Les personnages sont bleus et blancs dans ce film.'
             },
             'a': {
-                'en': 'Apple',
-                'fr': 'La pomme'
+                'en': 'Snow White',
+                'fr': 'Blanche Neige'
             },
             'b': {
-                'en': 'Kiwi',
-                'fr': 'Le kiwi'
+                'en': 'The Smurfs',
+                'fr': 'Les Schtroumpfs'
             },
             'c': {
-                'en': 'Banana',
-                'fr': 'La banane'
+                'en': '101 Dalmatians',
+                'fr': 'Les 101 Dalmatiens'
             },
-            'color': COLOR.GREEN,
+            'color': COLOR.RED,
             'answer': 'b'
         },
         '500': {
             'q': {
-                'en': 'This kind of food helps your eyesight.',
-                'fr': 'La sorte de nourriture qui aide la vision.'
+                'en': 'The name of the bad guy in the movie "Toy Story 3".',
+                'fr': 'Le nom du méchant dans le film « Histoire du jouet 3 » (Toy Story 3)'
             },
             'a': {
-                'en': 'Spinach',
-                'fr': 'L’épinard'
+                'en': 'Barbie',
+                'fr': 'Barbie'
             },
             'b': {
-                'en': 'Ice cream',
-                'fr': 'La crème glacée'
+                'en': 'Slinky',
+                'fr': 'Slinky'
             },
             'c': {
-                'en': 'Candies',
-                'fr': 'Les bonbons'
+                'en': 'Lotso',
+                'fr': 'Lotso'
             },
-            'color': COLOR.RED,
-            'answer': 'a'
+            'color': COLOR.BLUE,
+            'answer': 'c'
         },
     },
-    'Music': {
+    'Goshos': {
         '100': {
             'q': {
-                'en': 'One of President Ikeda’s favourite composers who inspired him as a youth with a symphony that reminded him of fate or destiny knocking on the door.',
-                'fr': 'Un des compositeurs préférés du président Ikeda qui l’a inspiré pendant sa jeunesse avec une symphonie qui lui rappelait que la destinée frappe à la porte.'
+                'en': 'The person who wrote the "Goshos".',
+                'fr': 'La personne qui a écrit le « Gosho'
             },
             'a': {
-                'en': 'Wolfgang Amadeus Mozart',
-                'fr': 'Wolfgang Amadeus Mozart'
+                'en': 'President Ikeda',
+                'fr': 'Le président Ikeda'
             },
             'b': {
-                'en': 'Frederic Chopin',
-                'fr': 'Frederic Chopin'
+                'en': 'Nichiren Daishonin',
+                'fr': 'Nichiren Daishonin'
             },
             'c': {
-                'en': 'Ludwig van Beethoven',
-                'fr': 'Ludwig van Beethoven'
+                'en': 'President Makiguchi',
+                'fr': 'Le président Makiguchi'
             },
-            'color': COLOR.ADULT,
-            'answer': 'c'
+            'color': COLOR.BLUE,
+            'answer': 'b'
         },
         '200': {
             'q': {
-                'en': 'Which musical artist is often referred to as the King of Pop?',
-                'fr': 'On parle souvent du Roi du Pop, à quel artiste se réfère-t-on?'
+                'en': 'Changing poison into ___________.',
+                'fr': '« Changer le poison en ________. »'
             },
-            'a': {
-                'en': 'Backstreet Boys',
-                'fr': 'Backstreet Boys'
-            },
-            'b': {
-                'en': 'Justin Beiber',
-                'fr': 'Justin Beiber'
-            },
-            'c': {
-                'en': 'Michael Jackson',
-                'fr': 'Michael Jackson'
-            },
-            'color': COLOR.GREEN,
-            'answer': 'c'
-        },
-        '300': {
-            'q': {
-                'en': 'Which is the musical instrument that has black and white keys?',
-                'fr': 'Quel instrument de musique a des clés blanches et noires? '
-            },
-            'a': {
-                'en': 'Guitar',
-                'fr': 'La guitare'
-            },
-            'b': {
-                'en': 'Piano',
-                'fr': 'Le piano'
-            },
-            'c': {
-                'en': 'Violin',
-                'fr': 'Le violon'
-            },
-            'color': COLOR.RED,
-            'answer': 'b'
-        },
-        '400': {
-            'q': {
-                'en': 'The trumpet is what kind of an instrument?',
-                'fr': 'La trompette fait partie de quelle catégorie d’instruments?'
-            },
-            'a': {
-                'en': 'Woodwind',
-                'fr': 'Les vents'
-            },
-            'b': {
-                'en': 'Brass',
-                'fr': 'Les cuivres'
-            },
-            'c': {
-                'en': 'Percussion',
-                'fr': 'Les percussions'
-            },
+            'a': { 'en': 'Heaven', 'fr': 'Ciel' },
+            'b': { 'en': 'Medicine', 'fr': 'Élixir' },
+            'c': { 'en': 'Thin air', 'fr': 'Air' },
             'color': COLOR.YELLOW,
             'answer': 'b'
         },
-        '500': {
+        '300': {
             'q': {
-                'en': 'Which instrument do you play without a bow?',
-                'fr': 'Quel instrument de musique se joue sans archet?'
+                'en': 'In one of Nichiren\'s writings, The Strategy of the Lotus Sutra, he '
+                    + 'said: "No matter how earnestly Nichiren prays for you, if you '
+                    + 'lack _______, it will be like trying to set fire to wet tinder.',
+                'fr': 'Dans un des écrits de Nichiren Daishonin, La stratégie du '
+                    + 'dit : « Quelle que soit la force avec laquelle Nichiren prie pour '
+                    + 'vous, si vous manquez de _____, ce sera comme essayer de faire du feu avec du bois mouillé. »'
+            },
+            'a': { 'en': 'Faith', 'fr': 'Foi' },
+            'b': { 'en': 'Daimoku', 'fr': 'Daimoku' },
+            'c': { 'en': 'Sleep', 'fr': 'Sommeil' },
+            'color': COLOR.GREEN,
+            'answer': 'a'
+        },
+        '400': {
+            'q': {
+                'en': 'The literal meaning of the word "Gosho"',
+                'fr': 'La véritable signification du mot gosho'
             },
             'a': {
-                'en': 'Flute',
-                'fr': 'La flûte'
+                'en': 'Honourable writings',
+                'fr': 'Écrits honorables'
             },
             'b': {
-                'en': 'Violin',
-                'fr': 'Le violon'
+                'en': 'Story books',
+                'fr': 'Livre d’histoire'
             },
             'c': {
-                'en': 'Harp',
-                'fr': 'La harpe'
+                'en': 'Letters',
+                'fr': 'Lettres'
             },
-            'color': COLOR.BLUE,
+            'color': COLOR.ADULT,
             'answer': 'a'
+        },
+        '500': {
+            'q': {
+                'en': 'In this Gosho, the carps will change into a dragon.',
+                'fr': 'Dans ce gosho, les carpes se changent en'
+            },
+            'a': {
+                'en': 'Letter to the Brothers',
+                'fr': 'La lettre aux frères'
+            },
+            'b': {
+                'en': 'Letter to the Dragons',
+                'fr': 'La lettre aux dragons'
+            },
+            'c': {
+                'en': 'The Dragon Gate',
+                'fr': 'La porte du dragon'
+            },
+            'color': COLOR.RED,
+            'answer': 'c'
         },
     },
-    'Sports': {
+    'History': {
         '100': {
             'q': {
-                'en': 'The team that won the Stanley Cup in 2012.',
-                'fr': 'L’équipe qui a gagné la coupe Stanley en 2012.'
+                'en': 'Who was the first person to set foot on the moon?',
+                'fr': 'Qui était la première personne à mettre le pied sur la lune?'
             },
             'a': {
-                'en': 'Los Angeles Kings',
-                'fr': 'Los Angeles Kings'
+                'en': 'Buzz Lightyear',
+                'fr': 'Buzz Lightyear'
             },
             'b': {
-                'en': 'Detroit Red Wings',
-                'fr': 'Detroit Red Wings'
+                'en': 'Neil Armstrong',
+                'fr': 'Neil Armstrong'
             },
             'c': {
-                'en': 'Philadelphia Flyers',
-                'fr': 'Philadelphia Flyers'
+                'en': 'James Bond',
+                'fr': 'James Bond'
             },
             'color': COLOR.GREEN,
-            'answer': 'a'
+            'answer': 'b'
         },
         '200': {
             'q': {
-                'en': 'The team that has won the most Stanley Cups.',
-                'fr': 'L’équipe qui a gagné le plus de coupes Stanley.'
+                'en': 'Name the home of the only ancient wonder still standing. Hint: These structures were built to house a monarch’s mummified body.',
+                'fr': 'Nommez l’endroit de la seule merveille ancienne encore debout. Indice: Ces structures ont été érigées pour accueillir le corps momifié d’un monarque.'
             },
             'a': {
-                'en': 'Detroit Red Wings',
-                'fr': 'Detroit Red Wings'
+                'en': 'Giza',
+                'fr': 'Giza'
             },
             'b': {
-                'en': 'Toronto Maple Leafs',
-                'fr': 'Toronto Maple Leafs'
+                'en': 'Babylon',
+                'fr': 'Babylone'
             },
             'c': {
-                'en': 'Montreal Canadiens',
-                'fr': 'Montreal Canadiens'
-            },
-            'color': COLOR.YELLOW,
-            'answer': 'c'
-        },
-        '300': {
-            'q': {
-                'en': 'The team that has won the most NBA championships.',
-                'fr': 'L’équipe qui a gagné le plus de championnats NBA.'
-            },
-            'a': {
-                'en': 'Boston Celtics',
-                'fr': 'Les Celtes de Boston'
-            },
-            'b': {
-                'en': 'Los Angeles Lakers',
-                'fr': 'Les Lakers de Los Angeles'
-            },
-            'c': {
-                'en': 'Chicago Bulls',
-                'fr': 'Les Bulls de Chicago'
+                'en': 'Olympia',
+                'fr': 'Olympe'
             },
             'color': COLOR.ADULT,
             'answer': 'a'
         },
-        '400': {
+        '300': {
             'q': {
-                'en': 'The average height of an NBA basketball player.',
-                'fr': 'La grandeur moyenne d’un joueur de basketball NBA.'
+                'en': 'Before ovens and stoves, how did people cook food?',
+                'fr': 'Avant qu’il y ait des fours et des poêles, qu’est-ce que les gens utilisaient pour faire cuire leur nourriture?'
             },
             'a': {
-                'en': '3\' 5"',
-                'fr': '3\' 5"'
+                'en': 'Fire',
+                'fr': 'Feu'
             },
             'b': {
-                'en': '6\' 7"',
-                'fr': '6\' 7"'
+                'en': 'Water',
+                'fr': 'Eau'
             },
             'c': {
-                'en': '9\'',
-                'fr': '9\''
+                'en': 'Trees',
+                'fr': 'Arbes'
             },
             'color': COLOR.RED,
-            'answer': 'b'
+            'answer': 'a'
+        },
+        '400': {
+            'q': {
+                'en': 'Who was the first Prime Minister of Canada?',
+                'fr': 'Qui a été le premier à être Premier ministre du Canada?'
+            },
+            'a': {
+                'en': 'Sir John A. MacDonald',
+                'fr': 'Sir John A. MacDonald'
+            },
+            'b': {
+                'en': 'Pierre Trudeau',
+                'fr': 'Pierre Trudeau'
+            },
+            'c': {
+                'en': 'Stephen Harper',
+                'fr': 'Stephen Harper'
+            },
+            'color': COLOR.BLUE,
+            'answer': 'a'
         },
         '500': {
             'q': {
-                'en': 'The country who won the 2010 World Cup.',
-                'fr': 'Le pays qui a gagné la coupe du monde en 2010.'
+                'en': 'Castles were very popular during the Middle Ages. What kind of terrain were castles usually built upon?',
+                'fr': 'Les châteaux étaient très populaires au Moyen-Âge. Sur quelle sorte de terrain les châteaux étaient habituellement bâtis?'
             },
             'a': {
-                'en': 'Spain',
-                'fr': 'L’Espagne'
+                'en': 'In an open area',
+                'fr': 'Dans un espace ouvert'
             },
             'b': {
-                'en': 'Brazil',
-                'fr': 'Le Brésil'
+                'en': 'On top of a hill',
+                'fr': 'Au sommet d’une colline'
             },
             'c': {
-                'en': 'Germany',
-                'fr': 'L’Allemagne'
+                'en': 'In a forest',
+                'fr': 'Dans la forêt'
             },
-            'color': COLOR.BLUE,
+            'color': COLOR.YELLOW,
             'answer': 'b'
         },
     },
